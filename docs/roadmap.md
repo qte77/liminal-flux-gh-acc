@@ -25,4 +25,22 @@ Key design decisions are formalized as ADRs in [architecture.md](architecture.md
 
 ## What's Next
 
-Phase 0 is the immediate target: create the living-core repo, push 4 seed files, verify heartbeat runs green. Everything after that is agent-driven. See [TODO.md](TODO.md) for concrete steps.
+### Phase 0: Seed (immediate target)
+
+Follow the [Deployment Guide](deployment.md) for bootstrap commands. Verify against [PRD Phase 0 AC](PRD.md).
+
+- [ ] Complete deployment guide Phase 0 steps
+- [ ] Inject seed goal per deployment guide Phase 0/1 boundary
+- [ ] Verify PRD Phase 0 AC passes
+
+### Phase 1: Single-Agent Loop
+
+For added/modified files and AC, see [PRD Phase 1](PRD.md).
+
+- [ ] Add `goal-intake.yaml`, `agent-worker.yaml`, `performance-log.jsonl`
+- [ ] Update heartbeat and orchestrator prompt with goal execution + discovery
+- [ ] Verify PRD Phase 1 AC passes
+
+### Phase 2+
+
+Each phase depends on proving the previous. See [PRD](PRD.md) for files, AC, and dependencies.

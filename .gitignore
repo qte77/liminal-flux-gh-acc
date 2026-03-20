@@ -1,3 +1,10 @@
 .env
 *.log
 node_modules/
+
+# Claude Code sandbox artifacts (bare git objects leaked into worktree)
+/HEAD
+/config
+/hooks
+/objects
+/refs
