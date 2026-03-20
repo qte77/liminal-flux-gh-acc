@@ -33,7 +33,7 @@ Closes <!-- #issue-number or N/A -->
 
 ## Documentation
 
-- [ ] Relevant docs updated ([architecture](docs/living-github-account.md), [PRD](docs/living-account-prd.md), [README](README.md))
+- [ ] Relevant docs updated ([architecture](docs/living-github-account.md), [PRD](docs/PRD.md), [README](README.md))
 - [ ] `AGENTS.md` updated if governance rules or agent boundaries changed
 
 ## Security

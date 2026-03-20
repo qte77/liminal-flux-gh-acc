@@ -10,7 +10,7 @@ assignees: ''
 
 - [ ] [README.md](https://github.com/qte77/liminal-flux-gh-acc/blob/main/README.md)
 - [ ] [Architecture](https://github.com/qte77/liminal-flux-gh-acc/blob/main/docs/living-github-account.md)
-- [ ] [PRD](https://github.com/qte77/liminal-flux-gh-acc/blob/main/docs/living-account-prd.md)
+- [ ] [PRD](https://github.com/qte77/liminal-flux-gh-acc/blob/main/docs/PRD.md)
 
 ## Question
 

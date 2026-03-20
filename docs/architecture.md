@@ -1,6 +1,8 @@
 # Architecture Decision Records
 
 > Formalized decisions from the system design. For full context on each decision, see [living-github-account.md](living-github-account.md).
+>
+> Related: [PRD](PRD.md) | [User Stories](UserStory.md)
 
 ## ADR-001: GitHub Actions as Agent Runtime
 

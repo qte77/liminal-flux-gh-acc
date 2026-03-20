@@ -1,18 +1,17 @@
 # TODO
 
-> Actionable next steps. For acceptance criteria details, see [living-account-prd.md](living-account-prd.md). For big picture, see [roadmap.md](roadmap.md).
+> Actionable next steps. For acceptance criteria details, see [PRD.md](PRD.md). For big picture, see [roadmap.md](roadmap.md).
 
 ## Phase 0: Seed
+
+Operational steps to bootstrap. For seed file contents and AC, see [PRD.md](PRD.md) Phase 0.
 
 - [ ] Create GitHub account for liminal-flux
 - [ ] `gh repo create living-core --public`
 - [ ] Set secrets: `CLAUDE_API_KEY`, `LIVING_PAT`
-- [ ] Write `.github/workflows/heartbeat.yaml` — cron */15min, install claude, run orchestrator prompt, commit state
-- [ ] Write `state/goals.json` — `{"version":1,"goals":[],"last_heartbeat":null}`
-- [ ] Write `prompts/system-orchestrator.md` — read goals, check Issues, execute or dispatch
-- [ ] Write `AGENTS.md` — governance rules for all agents
-- [ ] Push seed files, enable heartbeat workflow
-- [ ] Verify: heartbeat runs green, `goals.json` committed on main, no files beyond these 4
+- [ ] Write and push the 4 seed files (see PRD for specs)
+- [ ] Enable heartbeat workflow
+- [ ] Verify PRD Phase 0 AC passes
 
 ## Phase 0/1 Boundary: Seed Goal
 
@@ -20,22 +19,19 @@
 
 ## Phase 1: Single-Agent Loop
 
-- [ ] Add `goal-intake.yaml` — `on: repository_dispatch[goal]`
-- [ ] Add `agent-worker.yaml` — `on: issues[labeled:task]`, runs `claude -p`
-- [ ] Add `state/performance-log.jsonl`
-- [ ] Update heartbeat: goal scanning, Issue creation, idle discovery mode
-- [ ] Update `system-orchestrator.md`: goal execution logic, discovery section
-- [ ] Verify: manual goal -> Issue -> worker -> PR, end-to-end
-- [ ] Verify: `repository_dispatch` from qte77 completes same flow
-- [ ] Verify: idle discovery triggers within 15 minutes, goals have type + cost estimate
+Operational steps. For added/modified files and AC, see [PRD.md](PRD.md) Phase 1.
+
+- [ ] Add `goal-intake.yaml`, `agent-worker.yaml`, `performance-log.jsonl`
+- [ ] Update heartbeat and orchestrator prompt with goal execution + discovery
+- [ ] Verify PRD Phase 1 AC passes (end-to-end goal flow, discovery, tracing)
 
 ## Phase 2+
 
-Phases 2-7 depend on proving previous phases. See [living-account-prd.md](living-account-prd.md) for full AC.
+Each phase depends on proving the previous. See [PRD.md](PRD.md) for files, AC, and dependencies.
 
-- [ ] Phase 2: Orchestrator + coder + reviewer, Ralph loop, auto-merge thresholds
-- [ ] Phase 3: Daily reflector, agent memory, improvement feedback loop
-- [ ] Phase 4: Hourly supervisor, anomaly thresholds, cross-account escalation
-- [ ] Phase 5: Self-evolution with governance preflight, audit trail
-- [ ] Phase 6: Multi-repo orchestration, polyforge integration
-- [ ] Phase 7: Full autonomy — 14 days self-generated goals, weekly reports
+- [ ] Phase 2: Multi-agent (orchestrator + coder + reviewer)
+- [ ] Phase 3: Self-reflection
+- [ ] Phase 4: Self-supervision
+- [ ] Phase 5: Self-evolution
+- [ ] Phase 6: Cross-repo
+- [ ] Phase 7: Full autonomy

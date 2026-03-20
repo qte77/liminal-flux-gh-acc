@@ -11,9 +11,10 @@ Lim Sid is an agent-operated GitHub account. The docs defined 7 phases from boot
 
 - [Architecture — System Design](docs/living-github-account.md) — components, mechanisms, communication
 - [Architecture — ADRs](docs/architecture.md) — architecture decision records
-- [PRD](docs/living-account-prd.md) — phased roadmap from bootstrap to full autonomy
+- [PRD](docs/PRD.md) — phased roadmap from bootstrap to full autonomy
 - [Roadmap](docs/roadmap.md) — big-picture vision and phase progression
 - [TODO](docs/TODO.md) — actionable next steps
+- [User Stories](docs/UserStory.md) — personas and workflows
 
 ## Status
 

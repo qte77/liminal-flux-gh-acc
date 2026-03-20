@@ -2,7 +2,7 @@
 
 > Phased roadmap from bootstrap to full autonomy.
 > Each phase builds only what the previous phase proved necessary.
-> Architecture reference: [living-github-account.md](living-github-account.md)
+> Architecture reference: [living-github-account.md](../living-github-account.md)
 
 ## Principles
 
