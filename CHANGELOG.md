@@ -11,6 +11,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-03-20
+
+### Added
+
+- `docs/UserStory.md` — personas (human operator, agent system) and workflow summary
+- Version badge in README
+
+### Changed
+
+- PRD moved to `docs/sprints/sprint1.md`, symlinked at `docs/PRD.md`
+- Doc hierarchy enforced: removed duplicate content from `roadmap.md` and `TODO.md` (reference PRD instead)
+- Removed score threshold from `UserStory.md` workflow diagram (PRD authority)
+- Added cross-reference links in `living-github-account.md` and `architecture.md`
+- Updated all cross-references to new PRD path (README, PR template, Issue template, roadmap, TODO, system design)
+
 ## [0.1.0] - 2026-03-20
 
 ### Added
