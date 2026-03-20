@@ -42,6 +42,12 @@
 
 ---
 
+### Seed Goal
+
+The first human-injected goal that proves the loop: **"Generate and maintain your own README from repo contents."** Added to `goals.json` as part of Phase 0 bootstrap. Each completed goal's observations naturally surface the next one.
+
+---
+
 ## Phase 1: Single-Agent Loop
 
 **Goal**: One agent reads goals, executes a task, logs a trace, commits state.
@@ -63,12 +69,27 @@
 | `heartbeat.yaml` | Add goal scanning, Issue creation |
 | `system-orchestrator.md` | Add goal execution logic |
 
+**Goal Type Taxonomy**:
+
+| Type | Example | Cost | Gate |
+|------|---------|------|------|
+| **Self-maintenance** | "My README is stale — regenerate" | Low | None |
+| **Self-build** | "I have no CI — add lint + test workflow" | Medium | None |
+| **Serve qte77** | "qte77/polyforge has 3 stale PRs — review them" | Medium | Read-only first |
+| **Build tooling** | "Create a reusable GHA for dependency checking" | Medium | Supervisor cost check |
+| **Research** | "CC released new feature — evaluate for my workflows" | Low | None (read-only) |
+| **Strategic** | "Propose managing qte77/CABIO-test" | High | Human approval |
+
+**Cost gates**: Estimated > $1.00 requires supervisor validation. Estimated > $5.00 requires human approval. Enforced in heartbeat logic.
+
 **AC**:
 - [ ] Manual goal in `goals.json` -> heartbeat creates Issue within 20 min -> worker executes -> PR or closed Issue
 - [ ] `repository_dispatch` goal from qte77 -> same flow completes
 - [ ] `performance-log.jsonl` has entry with all fields
 - [ ] `goals.json` status updated to `completed` or `failed`
 - [ ] Simple goal ("add hello-world function") completes without human touch
+- [ ] When `goals.json` has no pending goals, heartbeat runs discovery mode and creates a goal within 15 minutes
+- [ ] Self-generated goal has type label and cost estimate
 
 ---
 
@@ -211,7 +232,7 @@ Outcomes -> performance-log -> Reflector -> Improvement Issues -> Orchestrator -
 
 ## Phase 7: Full Autonomy
 
-**Goal**: Self-sustaining. Agents set own sub-goals from metrics. Human is escalation-only.
+**Goal**: Lim generates and executes real goals across all types without human injection. Human is escalation-only.
 
 **Duration**: Month 8+. **Depends on**: Phase 6 proven (multi-repo without intervention).
 
@@ -220,11 +241,11 @@ Outcomes -> performance-log -> Reflector -> Improvement Issues -> Orchestrator -
 | File | Purpose |
 |------|---------|
 | `.github/workflows/weekly-report.yaml` | Cron weekly Mon 08:00 UTC |
-| `prompts/system-strategic-planner.md` | Generate goals from metric trends |
+
+No `system-strategic-planner.md` — the orchestrator prompt's discovery mode (added in Phase 1) handles goal generation. The heartbeat's idle discovery scales naturally: as Lim gains more observation capabilities in later phases, discovery mode sees more and generates richer goals.
 
 **AC**:
-- [ ] 14 consecutive days without human goals -> system still produces output
-- [ ] At least 1 strategic goal per week from metrics
+- [ ] 14 consecutive days of self-generated goals, covering at least 3 goal types from the taxonomy
 - [ ] Weekly report to qte77 dashboard every Monday
 - [ ] Monthly cost < $50
 - [ ] 10+ entries in `evolution-history.json`
