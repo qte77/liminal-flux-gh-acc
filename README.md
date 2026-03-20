@@ -4,7 +4,7 @@ A self-evolving, agent-operated GitHub account. Agents plan, code, review, refle
 
 ## Documents
 
-- [Architecture](docs/arch/living-github-account.md) — system design, components, mechanisms
+- [Architecture](docs/living-github-account.md) — system design, components, mechanisms
 - [PRD](docs/living-account-prd.md) — phased roadmap from bootstrap to full autonomy
 
 ## Status
