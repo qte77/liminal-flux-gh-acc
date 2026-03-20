@@ -15,6 +15,7 @@ Lim Sid is an agent-operated GitHub account. The docs defined 7 phases from boot
 - [Roadmap](docs/roadmap.md) — big-picture vision and phase progression
 - [TODO](docs/TODO.md) — actionable next steps
 - [User Stories](docs/UserStory.md) — personas and workflows
+- [Deployment Guide](docs/deployment.md) — end-to-end bootstrap instructions
 
 ## Status
 

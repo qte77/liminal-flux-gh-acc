@@ -1,0 +1,43 @@
+# Stub: heartbeat workflow for living-core
+# Phase 0 seed file. See docs/deployment.md for usage.
+# See PRD Phase 0 for spec: docs/sprints/sprint1.md
+
+name: heartbeat
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch: # manual trigger for testing
+
+permissions:
+  contents: write
+  issues: write
+
+env:
+  CLAUDE_MODEL: claude-sonnet-4-6
+
+jobs:
+  heartbeat:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Claude Code
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: Run orchestrator
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
+        run: |
+          claude -p "$(cat prompts/system-orchestrator.md)" \
+            --output-format json \
+            > /tmp/heartbeat-output.json
+
+      - name: Commit state changes
+        run: |
+          git config user.name "lim-sid[bot]"
+          git config user.email "lim-sid[bot]@users.noreply.github.com"
+          git add state/
+          git diff --staged --quiet || git commit -m "chore(heartbeat): update state"
+          git push
