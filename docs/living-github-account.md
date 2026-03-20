@@ -182,7 +182,7 @@ Each asset has one integration point. No asset serves two purposes.
 
 | Asset | Role | When |
 |-------|------|------|
-| **ralph-loop template** | Bootstrap structure for `living-core` | Phase 0: `gh repo create --template` |
+| **ralph-loop template** | Structural reference for `living-core` | Phase 0: empty repo; cherry-pick patterns as needed |
 | **ralph-loop scripts** | Dev loop engine for workers | Phase 2: git submodule at `ralph/` |
 | **claude-code-utils-plugin** | Skill registry for all agents | Phase 2: `extraKnownMarketplaces` in settings |
 | **polyforge** | Multi-repo orchestration from qte77 | Phase 6: qte77 runs `cc-parallel.sh` externally |
@@ -224,10 +224,3 @@ One log format, one file, append-only:
 ```
 
 **Consumers**: Reflector reads it for patterns. Supervisor reads it for anomalies. Weekly report aggregates it for humans. One source, three readers.
-
-## What This Is Not
-
-- Not a hosted service — it's a repo structure + workflows + prompts
-- Not tied to one LLM — `claude -p` today, any CLI agent tomorrow
-- Not requiring external infrastructure — GitHub is the entire platform
-- Not a framework — it's a pattern that bootstraps from a template and evolves
