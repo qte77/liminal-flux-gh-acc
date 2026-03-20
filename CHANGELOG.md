@@ -11,6 +11,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- `docs/deployment.md` — end-to-end bootstrap guide
+- `docs/stubs/` — 4 seed file templates (heartbeat.yaml, goals.json, system-orchestrator.md, AGENTS.md)
+
+### Changed
+
+- Merged `TODO.md` into `roadmap.md` "What's Next" section (DRY)
+- README description rewritten as forward-looking project summary
+- Roadmap Phase 0 status: Design -> Ready to deploy
+- Fixed v0.1.0/v0.0.1 CHANGELOG attribution
+
+### Removed
+
+- `docs/TODO.md` — content absorbed into roadmap
+
 ## [0.2.0] - 2026-03-20
 
 ### Added
