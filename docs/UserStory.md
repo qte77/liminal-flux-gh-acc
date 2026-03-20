@@ -16,8 +16,7 @@ The collection of workflow-based agents that autonomously plan, execute, review,
 
 ### Human Operator
 
-- **As the operator**, I want to bootstrap the living account with minimal effort, so that agents can take over from a known-good state.
-  - Push 4 seed files, verify heartbeat runs green. (~1 hour, one-time)
+- **As the operator**, I want to seed and bootstrap the living account with minimal effort, so that agents can take over from a known-good state. See [Deployment Guide](deployment.md).
 
 - **As the operator**, I want to send goals via `repository_dispatch`, so that I can steer the system without logging into the living account.
 

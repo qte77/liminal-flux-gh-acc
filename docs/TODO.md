@@ -4,18 +4,11 @@
 
 ## Phase 0: Seed
 
-Operational steps to bootstrap. For seed file contents and AC, see [PRD.md](PRD.md) Phase 0.
+Follow the [Deployment Guide](deployment.md) for step-by-step bootstrap commands. Verify against [PRD Phase 0 AC](PRD.md).
 
-- [ ] Create GitHub account for liminal-flux
-- [ ] `gh repo create living-core --public`
-- [ ] Set secrets: `CLAUDE_API_KEY`, `LIVING_PAT`
-- [ ] Write and push the 4 seed files (see PRD for specs)
-- [ ] Enable heartbeat workflow
+- [ ] Complete deployment guide Phase 0 steps
+- [ ] Inject seed goal per deployment guide Phase 0/1 boundary
 - [ ] Verify PRD Phase 0 AC passes
-
-## Phase 0/1 Boundary: Seed Goal
-
-- [ ] Add seed goal to `goals.json`: "Generate and maintain your own README from repo contents"
 
 ## Phase 1: Single-Agent Loop
 

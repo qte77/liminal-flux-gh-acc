@@ -11,7 +11,7 @@
 
 ## Phase 0: Bootstrap
 
-~1 hour of human work, one-time. After this, agents take over.
+After this, agents take over.
 
 ### 1. Create the repo
 
@@ -68,9 +68,9 @@ gh workflow run heartbeat
 
 Check the [PRD Phase 0 AC](sprints/sprint1.md) against the running system:
 
-- [ ] Heartbeat workflow runs green (`gh run list --workflow=heartbeat`)
-- [ ] `state/goals.json` committed on main
-- [ ] No files exist beyond the 4 seed files
+```bash
+gh run list --workflow=heartbeat
+```
 
 ## Phase 0/1 Boundary: Inject Seed Goal
 
@@ -102,33 +102,6 @@ git push
 
 The next heartbeat picks up the goal, creates a task Issue, and the loop begins.
 
-## Phase 1: Cross-Account Communication
-
-After the living account processes its first goal, set up the command center link:
-
-### 1. Create dashboard repo (on qte77)
-
-```bash
-# Authenticated as qte77
-gh repo create living-account-dashboard --public
-```
-
-### 2. Set dashboard PAT (on living account)
-
-Create a fine-grained PAT on qte77 scoped to `living-account-dashboard` only (Issues: write). Then on the living account:
-
-```bash
-gh secret set DASHBOARD_PAT    # qte77 dashboard-only PAT
-```
-
-### 3. Send goals from qte77
-
-```bash
-gh api repos/liminal-flux/living-core/dispatches \
-  -f event_type=goal \
-  -f 'client_payload={"description":"Add a CI lint workflow","type":"self-build","cost_estimate_usd":0.30}'
-```
-
 ## Monitoring
 
 Once running, monitor via:
@@ -139,8 +112,8 @@ Once running, monitor via:
 | Task queue | `gh issue list --label task` on living-core |
 | Goal status | `state/goals.json` on main branch |
 | Traces | `state/performance-log.jsonl` (Phase 1+) |
-| Escalations | Issues with `label:human-required` on living-core |
-| Dashboard | `qte77/living-account-dashboard` Issues |
+
+Cross-account setup (dashboard repo, `DASHBOARD_PAT`, escalation routing) is Phase 4 scope. See [PRD Phase 4](sprints/sprint1.md).
 
 ## Seed File Reference
 
