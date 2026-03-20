@@ -12,7 +12,7 @@ The system bootstraps from 4 seed files to full autonomy across multiple reposit
 
 | Phase | Name | Current Status |
 |-------|------|----------------|
-| 0 | Seed | Design |
+| 0 | Seed | Ready to deploy |
 | 1 | Single-Agent Loop | Design |
 | 2 | Multi-Agent | Design |
 | 3 | Self-Reflection | Design |
@@ -27,11 +27,18 @@ Key design decisions are formalized as ADRs in [architecture.md](architecture.md
 
 ### Phase 0: Seed (immediate target)
 
-Follow the [Deployment Guide](deployment.md) for bootstrap commands. Verify against [PRD Phase 0 AC](PRD.md).
+Design complete. Seed file stubs and deployment guide ready. Remaining work is execution.
 
-- [ ] Complete deployment guide Phase 0 steps
-- [ ] Inject seed goal per deployment guide Phase 0/1 boundary
-- [ ] Verify PRD Phase 0 AC passes
+- [x] System design ([living-github-account.md](living-github-account.md))
+- [x] PRD with phased AC ([PRD.md](PRD.md))
+- [x] ADRs ([architecture.md](architecture.md))
+- [x] User stories ([UserStory.md](UserStory.md))
+- [x] Seed file stubs ([stubs/](stubs/))
+- [x] Deployment guide ([deployment.md](deployment.md))
+- [ ] Create GitHub account + `living-core` repo
+- [ ] Set secrets (`CLAUDE_API_KEY`, `LIVING_PAT`)
+- [ ] Push seed files, verify heartbeat runs green
+- [ ] Inject seed goal, verify loop completes
 
 ### Phase 1: Single-Agent Loop
 

@@ -19,4 +19,4 @@ This repo contains the design docs, seed file templates, and deployment guide fo
 
 ## Status
 
-Design phase. No running infrastructure yet.
+Phase 0 ready to deploy. Design docs, seed stubs, and deployment guide complete. No running infrastructure yet.
