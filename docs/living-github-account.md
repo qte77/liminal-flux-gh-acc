@@ -77,7 +77,7 @@ Agents are workflows, not separate services. Each workflow is one agent with one
 
 | Agent | Trigger | Does One Thing |
 |-------|---------|----------------|
-| Heartbeat | cron */15min | Checks goals, emits task Issues |
+| Heartbeat | cron */15min | Checks goals, emits task Issues; **if idle, observes environment and generates goals** |
 | Worker | label:task | Executes a task via `claude -p`, commits results |
 | Orchestrator | label:goal-ready | Decomposes a goal into task Issues |
 | Reviewer | pull_request | Posts structured quality score |
@@ -130,6 +130,39 @@ performance-log.jsonl (7 days) ──> Reflector agent ──> Improvement Issue
 **Feedback loop**: Improvement Issues enter the normal orchestrator queue. The reflector's output becomes the system's next input. Memory entries are injected into all agent prompts, making every agent smarter over time.
 
 **YAGNI guard**: The reflector does NOT modify prompts or workflows directly. It only creates Issues. The orchestrator and evolver handle execution. One concern per agent.
+
+## Idle Discovery
+
+When the goal queue is empty, the heartbeat switches to discovery mode instead of idling. This is one `if/else` in the heartbeat — not a new agent or workflow.
+
+```
+Heartbeat runs:
+  IF goals pending → dispatch them (existing behavior)
+  IF no goals pending → run discovery mode:
+    1. Observe own repo state (files, Issues, CI status)
+    2. Observe qte77 repos via GH API (PRs, Issues, deps, CI)
+    3. Read agent-memory.md for context
+    4. Generate 1 goal, write it to goals.json
+    5. Next heartbeat dispatches it
+```
+
+**What Lim can observe** (available tools in GHA):
+
+| Observation | Tool | Available |
+|-------------|------|-----------|
+| Own repo files, structure, gaps | `ls`, `cat`, file analysis | Phase 0 |
+| Own open/closed Issues, PRs | `gh issue list`, `gh pr list` | Phase 1 |
+| Own CI status, workflow runs | `gh run list` | Phase 1 |
+| qte77 repo list | `gh repo list qte77` | Phase 1 (`DASHBOARD_PAT` read scope) |
+| qte77 repo Issues, PRs, deps | `gh api repos/qte77/REPO/...` | Phase 4+ |
+| coding-agents-research dispatches | `repository_dispatch` events | Phase 4+ |
+| Performance trends | `state/performance-log.jsonl` | Phase 3+ |
+
+**Goal types and cost gates**: Defined once in [living-account-prd.md](living-account-prd.md) Phase 1.
+
+**Why the heartbeat, not the reflector**: The reflector runs daily. Idle discovery should happen within 15 minutes of the queue emptying. The heartbeat already runs at that cadence. DRY — don't add a second cron for the same trigger ("nothing to do").
+
+**KISS**: Discovery mode is a section in `system-orchestrator.md`, not a new prompt. The orchestrator already reads goals and dispatches. Discovery adds: "if nothing to do, look around and find something."
 
 ## Self-Supervision
 

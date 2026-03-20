@@ -1,6 +1,6 @@
 # liminal-flux-gh-acc
 
-A self-evolving, agent-operated GitHub account. Agents plan, code, review, reflect, supervise, and evolve their own infrastructure. Humans set goals and handle security escalations.
+**Lim Sid** — a self-evolving, agent-operated GitHub account. Agents plan, code, review, reflect, supervise, and evolve their own infrastructure. Humans set goals and handle security escalations.
 
 ## Documents
 
