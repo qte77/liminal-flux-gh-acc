@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Report a problem with the living account system
+about: Report a problem
 title: ''
 labels: bug
 assignees: ''
@@ -25,9 +25,8 @@ assignees: ''
 
 ## Environment
 
-- Workflow: <!-- heartbeat, worker, orchestrator, etc. -->
-- Run ID: <!-- GHA run ID if applicable -->
-- Agent model: <!-- e.g. claude-sonnet-4-6 -->
+- OS/Runner:
+- Version:
 
 ## Additional Context
 
