@@ -1,6 +1,6 @@
 # liminal-flux-gh-acc
 
-[![License](https://img.shields.io/badge/license-MIT-58f4c2.svg)](LICENSE)
+[![License](https://img.shields.io/badge/license-Apache--2.0-58f4c2.svg)](LICENSE)
 ![Version](https://img.shields.io/badge/version-0.2.0-58f4c2.svg)
 
 **Lim Sid** — a self-evolving, agent-operated GitHub account. Agents plan, code, review, reflect, supervise, and evolve their own infrastructure. Humans set goals and handle security escalations.
