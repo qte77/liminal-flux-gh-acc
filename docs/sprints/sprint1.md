@@ -108,7 +108,7 @@ The first human-injected goal that proves the loop: **"Generate and maintain you
 | `prompts/system-coder.md` | Worker prompt for implementation |
 | `prompts/system-reviewer.md` | Reviewer prompt for quality scoring |
 | `ralph/` | Git submodule — ralph-loop dev engine |
-| `.claude/settings.json` | `extraKnownMarketplaces: ["qte77/claude-code-utils-plugin"]` |
+| `.claude/settings.json` | `extraKnownMarketplaces: ["qte77/claude-code-plugins"]` |
 
 **AC**:
 - [ ] Code goal -> orchestrator creates stories -> worker runs `make ralph ITERATIONS=5` -> PR
