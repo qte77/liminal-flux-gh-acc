@@ -157,7 +157,7 @@ Heartbeat runs:
 | Own CI status, workflow runs | `gh run list` | Phase 1 |
 | qte77 repo list | `gh repo list qte77` | Phase 1 (`DASHBOARD_PAT` read scope) |
 | qte77 repo Issues, PRs, deps | `gh api repos/qte77/REPO/...` | Phase 4+ |
-| coding-agents-research dispatches | `repository_dispatch` events | Phase 4+ |
+| ai-agents-research dispatches | `repository_dispatch` events | Phase 4+ |
 | Performance trends | `state/performance-log.jsonl` | Phase 3+ |
 
 **Goal types and cost gates**: Defined once in [PRD.md](PRD.md) Phase 1.
@@ -221,7 +221,7 @@ Each asset has one integration point. No asset serves two purposes.
 | **ralph-loop scripts** | Dev loop engine for workers | Phase 2: git submodule at `ralph/` |
 | **claude-code-plugins** | Skill registry for all agents | Phase 2: `extraKnownMarketplaces` in settings |
 | **polyforge** | Multi-repo orchestration from qte77 | Phase 6: qte77 runs `cc-parallel.sh` externally |
-| **coding-agents-research** | Platform intel feed | Phase 4+: posts `repository_dispatch` to living-core |
+| **ai-agents-research** | Platform intel feed | Phase 4+: posts `repository_dispatch` to living-core |
 | **gha-ai-changelog** | Automated CHANGELOG | Phase 2+: reusable workflow post-merge |
 | **gha-dirtree-to-readme** | Auto-sync README structure | Phase 2+: reusable workflow post-merge |
 | **Agents-eval** | Agent performance evaluation | Phase 4+: qte77 runs evals on living account traces |
