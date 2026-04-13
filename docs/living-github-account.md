@@ -219,7 +219,7 @@ Each asset has one integration point. No asset serves two purposes.
 |-------|------|------|
 | **ralph-loop template** | Structural reference for `living-core` | Phase 0: empty repo; cherry-pick patterns as needed |
 | **ralph-loop scripts** | Dev loop engine for workers | Phase 2: git submodule at `ralph/` |
-| **claude-code-utils-plugin** | Skill registry for all agents | Phase 2: `extraKnownMarketplaces` in settings |
+| **claude-code-plugins** | Skill registry for all agents | Phase 2: `extraKnownMarketplaces` in settings |
 | **polyforge** | Multi-repo orchestration from qte77 | Phase 6: qte77 runs `cc-parallel.sh` externally |
 | **coding-agents-research** | Platform intel feed | Phase 4+: posts `repository_dispatch` to living-core |
 | **gha-ai-changelog** | Automated CHANGELOG | Phase 2+: reusable workflow post-merge |
