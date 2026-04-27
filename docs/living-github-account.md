@@ -107,6 +107,7 @@ All inter-agent messages use one format — structured JSON in Issue comments:
 **Why not a separate messaging system**: YAGNI. Issues are persistent, searchable, and human-readable. Adding Slack/webhooks/queues creates infrastructure to maintain with no proven benefit.
 
 **Cross-account communication**:
+
 - qte77 -> living account: `gh api repos/.../dispatches -f event_type=goal -f client_payload='{...}'`
 - living account -> qte77: `gh api repos/qte77/living-account-dashboard/issues -X POST -f title="..." -f body="..."`
 
@@ -120,12 +121,14 @@ performance-log.jsonl (7 days) ──> Reflector agent ──> Improvement Issue
 ```
 
 **What it looks for**:
+
 - Repeated failure patterns (same error across runs)
 - Cost trends (rising cost per goal)
 - Skill gaps (tasks that consistently need more iterations)
 - Stale improvements (old improvement Issues still open)
 
 **What it produces**:
+
 - `improvement` Issues with: pattern, evidence (run IDs), proposed change, expected impact
 - Memory entries in Context/Problem/Solution/Evidence/References format
 
@@ -171,6 +174,7 @@ Heartbeat runs:
 The supervisor is the safety net. It catches what individual agents can't see about themselves.
 
 **Distinct from reflection**:
+
 - Reflector: "What patterns can we learn from?" (daily, improvement-oriented)
 - Supervisor: "Is something wrong right now?" (hourly, safety-oriented)
 
@@ -195,12 +199,14 @@ The supervisor is the safety net. It catches what individual agents can't see ab
 Agents can modify their own prompts, configs, and workflows — within hard boundaries.
 
 **What agents CAN self-modify** (no human gate):
+
 - Prompt files in `prompts/`
 - Workflow environment variables (timeouts, iteration counts, model selection)
 - Anomaly thresholds in `supervisor-config.json`
 - New cron schedules (if cost impact < 10% of daily budget)
 
 **What requires human escalation**:
+
 - Workflow `permissions:` blocks
 - Secret creation or rotation (`gh secret`)
 - Destructive operations (`push --force`, `repo delete`)
@@ -241,6 +247,7 @@ Each asset has one integration point. No asset serves two purposes.
 **Minimum privilege**: `DASHBOARD_PAT` cannot read or write anything in the living account. A compromised report pathway cannot escalate to living account control.
 
 **Workflow permissions** (every workflow):
+
 ```yaml
 permissions:
   contents: write
@@ -248,6 +255,7 @@ permissions:
   pull-requests: write
   actions: read
 ```
+
 Never: `admin`, `organization`, `security_events`.
 
 ## Tracing

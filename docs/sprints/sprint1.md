@@ -21,6 +21,7 @@
 **Duration**: ~1 hour of human work, one-time.
 
 **Human steps**:
+
 1. Create GitHub account
 2. `gh repo create living-core --public`
 3. `gh secret set CLAUDE_API_KEY`, `gh secret set LIVING_PAT`
@@ -36,6 +37,7 @@
 | `AGENTS.md` | Governance: what agents can/cannot do, escalation triggers |
 
 **AC**:
+
 - [ ] Heartbeat workflow runs green
 - [ ] `state/goals.json` committed on main
 - [ ] No files exist beyond these 4
@@ -83,6 +85,7 @@ The first human-injected goal that proves the loop: **"Generate and maintain you
 **Cost gates**: Estimated > $1.00 requires supervisor validation. Estimated > $5.00 requires human approval. Enforced in heartbeat logic.
 
 **AC**:
+
 - [ ] Manual goal in `goals.json` -> heartbeat creates Issue within 20 min -> worker executes -> PR or closed Issue
 - [ ] `repository_dispatch` goal from qte77 -> same flow completes
 - [ ] `performance-log.jsonl` has entry with all fields
@@ -111,6 +114,7 @@ The first human-injected goal that proves the loop: **"Generate and maintain you
 | `.claude/settings.json` | `extraKnownMarketplaces: ["qte77/claude-code-plugins"]` |
 
 **AC**:
+
 - [ ] Code goal -> orchestrator creates stories -> worker runs `make ralph ITERATIONS=5` -> PR
 - [ ] Reviewer posts score: `{correctness, test_coverage, security, code_style, composite}`
 - [ ] Auto-merge when composite >= 7.0 AND security >= 8
@@ -136,12 +140,14 @@ The first human-injected goal that proves the loop: **"Generate and maintain you
 | `.github/ISSUE_TEMPLATE/improvement.yaml` | Structured: pattern, evidence, proposed change, expected impact |
 
 **Feedback loop**:
+
 ```
 Outcomes -> performance-log -> Reflector -> Improvement Issues -> Orchestrator -> Worker -> Better outcomes
                                         -> agent-memory.md -> All agent prompts -> Smarter agents
 ```
 
 **AC**:
+
 - [ ] After 7 days of data: at least 1 `improvement` Issue with all required fields
 - [ ] `agent-memory.md` contains at least 1 entry after first run
 - [ ] Orchestrator processes improvement Issues normally
@@ -169,6 +175,7 @@ Outcomes -> performance-log -> Reflector -> Improvement Issues -> Orchestrator -
 **New repo in qte77**: `living-account-dashboard` — receives reports and escalations.
 
 **AC**:
+
 - [ ] Stuck task > 90min -> supervisor escalates with `label:human-required`
 - [ ] Cost spike > 2x average -> escalation before daily limit
 - [ ] Escalation blocks goal processing until `label:human-resolved`
@@ -198,6 +205,7 @@ Outcomes -> performance-log -> Reflector -> Improvement Issues -> Orchestrator -
 `permissions:`, `secrets\.`, `gh secret`, `push --force`, `repo delete`, `GITHUB_TOKEN`
 
 **AC**:
+
 - [ ] Approved proposal -> evolver modifies prompt file -> PR merged
 - [ ] Evolver adjusts workflow env var successfully
 - [ ] Pre-flight blocks `permissions:` change (test explicitly)
@@ -223,6 +231,7 @@ Outcomes -> performance-log -> Reflector -> Improvement Issues -> Orchestrator -
 **New repos**: `living-dev-*` created by evolver as goals require.
 
 **AC**:
+
 - [ ] Multi-orchestrator fans out goal to 2+ repos in parallel
 - [ ] Results aggregated back to `living-core/state/`
 - [ ] At least 2 project repos beyond `living-core`
@@ -245,6 +254,7 @@ Outcomes -> performance-log -> Reflector -> Improvement Issues -> Orchestrator -
 No `system-strategic-planner.md` — the orchestrator prompt's discovery mode (added in Phase 1) handles goal generation. The heartbeat's idle discovery scales naturally: as Lim gains more observation capabilities in later phases, discovery mode sees more and generates richer goals.
 
 **AC**:
+
 - [ ] 14 consecutive days of self-generated goals, covering at least 3 goal types from the taxonomy
 - [ ] Weekly report to qte77 dashboard every Monday
 - [ ] Monthly cost < $50
