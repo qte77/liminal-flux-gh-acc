@@ -18,7 +18,7 @@ After this, agents take over.
 ```bash
 gh repo create living-core --public --clone
 cd living-core
-```
+```bash
 
 ### 2. Set secrets
 
@@ -46,7 +46,7 @@ cp /path/to/liminal-flux-gh-acc/docs/stubs/system-orchestrator.md prompts/
 
 # Governance
 cp /path/to/liminal-flux-gh-acc/docs/stubs/AGENTS.md .
-```
+```bash
 
 Review and customize each file before committing. The stubs are starting points — adapt the orchestrator prompt and governance rules to your needs.
 
@@ -62,7 +62,7 @@ The heartbeat workflow starts automatically on the next cron tick (within 15 min
 
 ```bash
 gh workflow run heartbeat
-```
+```bash
 
 ### 5. Verify
 
@@ -98,7 +98,7 @@ EOF
 git add state/goals.json
 git commit -m "feat: inject seed goal"
 git push
-```
+```bash
 
 The next heartbeat picks up the goal, creates a task Issue, and the loop begins.
 
