@@ -48,7 +48,7 @@ The collection of workflow-based agents that autonomously plan, execute, review,
 
 ## Workflow Summary
 
-```
+```text
 Operator sets goal ──> repository_dispatch ──> goal-intake workflow
                                                      │
 Heartbeat (idle) ──> discovers goal ─────────────────┘

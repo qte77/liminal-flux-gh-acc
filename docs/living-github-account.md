@@ -11,7 +11,7 @@ GitHub Actions is the agent runtime. The repo is the agent's memory. Issues are 
 
 ## Two-Account Model
 
-```
+```yaml
 qte77 (Command Center)                    liminal-flux (Agent-Operated)
 ─────────────────────────                  ─────────────────────────────
 Sets high-level goals             ──>      living-core/ (brain + state)
@@ -39,7 +39,7 @@ living-account-dashboard/: reports
 
 Only files that exist from Phase 0 are listed as Phase 0. Everything else appears when its phase proves the need.
 
-```
+```bash
 living-core/
   .github/workflows/
     heartbeat.yaml              [Phase 0] Cron */15min — system pulse
@@ -93,7 +93,7 @@ Agents are workflows, not separate services. Each workflow is one agent with one
 
 All inter-agent messages use one format — structured JSON in Issue comments:
 
-````
+````text
 ```agent-message
 {
   "agent": "orchestrator",
@@ -115,7 +115,7 @@ All inter-agent messages use one format — structured JSON in Issue comments:
 
 The reflector is the system's learning loop. It runs daily, not continuously — reflection needs accumulated data to be useful.
 
-```
+```text
 performance-log.jsonl (7 days) ──> Reflector agent ──> Improvement Issues
                                                    ──> agent-memory.md entries
 ```
@@ -140,7 +140,7 @@ performance-log.jsonl (7 days) ──> Reflector agent ──> Improvement Issue
 
 When the goal queue is empty, the heartbeat switches to discovery mode instead of idling. This is one `if/else` in the heartbeat — not a new agent or workflow.
 
-```
+```text
 Heartbeat runs:
   IF goals pending → dispatch them (existing behavior)
   IF no goals pending → run discovery mode:
@@ -254,7 +254,7 @@ permissions:
   issues: write
   pull-requests: write
   actions: read
-```
+```yaml
 
 Never: `admin`, `organization`, `security_events`.
 
