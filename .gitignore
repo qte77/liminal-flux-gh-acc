@@ -2,6 +2,9 @@
 *.log
 node_modules/
 
+# Claude Code local permission grants (never commit)
+.claude/settings.local.json
+
 # Claude Code sandbox artifacts (bare git objects leaked into worktree)
 /HEAD
 /config
