@@ -1,6 +1,6 @@
 # User Stories
 
-> Who uses the system and what workflows they follow. For acceptance criteria details, see [PRD.md](PRD.md). For system design, see [living-github-account.md](living-github-account.md).
+> Who uses the system and what workflows they follow. For acceptance criteria details, see [PRD.md](sprints/sprint1.md). For system design, see [living-github-account.md](living-github-account.md).
 
 ## Personas
 

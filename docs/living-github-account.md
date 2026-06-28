@@ -3,7 +3,7 @@
 > System design for a self-evolving, agent-operated GitHub account.
 > Every component passes three gates: Is it the simplest approach? Does it duplicate anything? Do we need it now?
 >
-> Related: [ADRs](architecture.md) | [User Stories](UserStory.md) | [PRD](PRD.md)
+> Related: [ADRs](architecture.md) | [User Stories](UserStory.md) | [PRD](sprints/sprint1.md)
 
 ## Core Idea
 
@@ -163,7 +163,7 @@ Heartbeat runs:
 | ai-agents-research dispatches | `repository_dispatch` events | Phase 4+ |
 | Performance trends | `state/performance-log.jsonl` | Phase 3+ |
 
-**Goal types and cost gates**: Defined once in [PRD.md](PRD.md) Phase 1.
+**Goal types and cost gates**: Defined once in [PRD](sprints/sprint1.md) Phase 1.
 
 **Why the heartbeat, not the reflector**: The reflector runs daily. Idle discovery should happen within 15 minutes of the queue emptying. The heartbeat already runs at that cadence. DRY — don't add a second cron for the same trigger ("nothing to do").
 
