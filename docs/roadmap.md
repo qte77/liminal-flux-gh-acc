@@ -1,6 +1,6 @@
 # Roadmap
 
-> Big-picture vision and phase progression. For detailed acceptance criteria, see [PRD.md](PRD.md). For system design, see [living-github-account.md](living-github-account.md).
+> Big-picture vision and phase progression. For detailed acceptance criteria, see [PRD](sprints/sprint1.md). For system design, see [living-github-account.md](living-github-account.md).
 
 ## Vision
 
@@ -8,7 +8,7 @@ The system bootstraps from 4 seed files to full autonomy across multiple reposit
 
 ## Phase Progression
 
-8 phases from bootstrap to full autonomy. See [PRD.md](PRD.md) for detailed acceptance criteria, added files, and dependencies per phase.
+8 phases from bootstrap to full autonomy. See [PRD](sprints/sprint1.md) for detailed acceptance criteria, added files, and dependencies per phase.
 
 | Phase | Name | Current Status |
 |-------|------|----------------|
@@ -30,7 +30,7 @@ Key design decisions are formalized as ADRs in [architecture.md](architecture.md
 Design complete. Seed file stubs and deployment guide ready. Remaining work is execution.
 
 - [x] System design ([living-github-account.md](living-github-account.md))
-- [x] PRD with phased AC ([PRD.md](PRD.md))
+- [x] PRD with phased AC ([PRD](sprints/sprint1.md))
 - [x] ADRs ([architecture.md](architecture.md))
 - [x] User stories ([UserStory.md](UserStory.md))
 - [x] Seed file stubs ([stubs/](stubs/))
@@ -42,7 +42,7 @@ Design complete. Seed file stubs and deployment guide ready. Remaining work is e
 
 ### Phase 1: Single-Agent Loop
 
-For added/modified files and AC, see [PRD Phase 1](PRD.md).
+For added/modified files and AC, see [PRD Phase 1](sprints/sprint1.md).
 
 - [ ] Add `goal-intake.yaml`, `agent-worker.yaml`, `performance-log.jsonl`
 - [ ] Update heartbeat and orchestrator prompt with goal execution + discovery
@@ -50,4 +50,4 @@ For added/modified files and AC, see [PRD Phase 1](PRD.md).
 
 ### Phase 2+
 
-Each phase depends on proving the previous. See [PRD](PRD.md) for files, AC, and dependencies.
+Each phase depends on proving the previous. See [PRD](sprints/sprint1.md) for files, AC, and dependencies.

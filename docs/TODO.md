@@ -1,10 +1,10 @@
 # TODO
 
-> Actionable next steps. For acceptance criteria details, see [PRD.md](PRD.md). For big picture, see [roadmap.md](roadmap.md).
+> Actionable next steps. For acceptance criteria details, see [PRD.md](sprints/sprint1.md). For big picture, see [roadmap.md](roadmap.md).
 
 ## Phase 0: Seed
 
-Follow the [Deployment Guide](deployment.md) for step-by-step bootstrap commands. Verify against [PRD Phase 0 AC](PRD.md).
+Follow the [Deployment Guide](deployment.md) for step-by-step bootstrap commands. Verify against [PRD Phase 0 AC](sprints/sprint1.md).
 
 - [ ] Complete deployment guide Phase 0 steps
 - [ ] Inject seed goal per deployment guide Phase 0/1 boundary
@@ -12,7 +12,7 @@ Follow the [Deployment Guide](deployment.md) for step-by-step bootstrap commands
 
 ## Phase 1: Single-Agent Loop
 
-Operational steps. For added/modified files and AC, see [PRD.md](PRD.md) Phase 1.
+Operational steps. For added/modified files and AC, see [PRD.md](sprints/sprint1.md) Phase 1.
 
 - [ ] Add `goal-intake.yaml`, `agent-worker.yaml`, `performance-log.jsonl`
 - [ ] Update heartbeat and orchestrator prompt with goal execution + discovery
@@ -20,7 +20,7 @@ Operational steps. For added/modified files and AC, see [PRD.md](PRD.md) Phase 1
 
 ## Phase 2+
 
-Each phase depends on proving the previous. See [PRD.md](PRD.md) for files, AC, and dependencies.
+Each phase depends on proving the previous. See [PRD.md](sprints/sprint1.md) for files, AC, and dependencies.
 
 - [ ] Phase 2: Multi-agent (orchestrator + coder + reviewer)
 - [ ] Phase 3: Self-reflection

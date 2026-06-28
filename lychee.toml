@@ -1,0 +1,11 @@
+# Lychee link checker configuration
+# https://lychee.cli.rs/usage/config/
+
+# Accept common "soft failure" status codes from bot-protected sites
+accept = [200, 204, 301, 401, 403, 429]
+
+# Exclude URLs that commonly fail in CI
+exclude = [
+  "https://github.com/qte77/liminal-flux-gh-acc/security/advisories/new",
+  "https://github.com/qte77/qte77/blob/main/AGENTS.md.*",
+]

@@ -13,7 +13,7 @@ stubs, and guide -- do not add runtime code.
 
 - docs/living-github-account.md -- system design (components, mechanisms, comms)
 - docs/architecture.md -- architecture decision records
-- docs/PRD.md -- phased roadmap from bootstrap to full autonomy
+- docs/sprints/sprint1.md -- phased roadmap from bootstrap to full autonomy
 - docs/roadmap.md -- vision, phase status, next steps
 - docs/UserStory.md -- personas and workflows
 - docs/deployment.md -- end-to-end bootstrap instructions
