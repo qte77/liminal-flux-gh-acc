@@ -141,7 +141,7 @@ The first human-injected goal that proves the loop: **"Generate and maintain you
 
 **Feedback loop**:
 
-```
+```text
 Outcomes -> performance-log -> Reflector -> Improvement Issues -> Orchestrator -> Worker -> Better outcomes
                                         -> agent-memory.md -> All agent prompts -> Smarter agents
 ```
