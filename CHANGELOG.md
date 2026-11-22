@@ -18,6 +18,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Claude Code `.claude/settings.json` sets `BASH_MAX_OUTPUT_LENGTH` to `15000` and
+  `CLAUDE_AUTOCOMPACT_PCT_OVERRIDE` to `50` ([docs](https://code.claude.com/docs/en/env-vars))
 - Standardized .claude (AGENTS.md + CLAUDE.md symlink, estate rules, qte77-claude-code-plugins marketplace); README to doc-structure canon; removed the docs/PRD.md symlink and repointed refs to docs/sprints/sprint1.md.
 - Merged `TODO.md` into `roadmap.md` "What's Next" section (DRY)
 - README description rewritten as forward-looking project summary
